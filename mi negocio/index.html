@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EcoTect Landscape</title>
+  <meta name="description" content="Servicios de jardinería en Miami: mantenimiento, poda, fumigación, mulch y sprinklers. Puntualidad y calidad garantizada.">
+  <meta name="keywords" content="jardinería, mantenimiento, poda, fumigación, mulch, sprinklers, Miami">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <style>
+    :root{
+      --green:#2c6e49;
+      --green-700:#1f4d33;
+      --light:#f7f7f7;
+      --dark:#1a1a1a;
+      --max:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box;}
+    html,body{margin:0;padding:0;scroll-behavior:smooth;}
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--dark);
+      line-height:1.6;
+      background: #fff;
+    }
+
+    header{background:var(--green);color:#fff;}
+    .topbar{
+      max-width:var(--max);
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 18px;
+    }
+    .logo img{height:50px;}
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+    }
+    nav a:hover{ text-decoration:underline }
+
+    .section{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:40px 18px;
+    }
+    .section h2{ margin:0 0 10px }
+    .section p.lead{ margin:0 0 22px; color:#444 }
+
+    .contact{
+      background:#f9fbf9;
+      border:1px solid #e7f0e7;
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .contact a{ color:var(--green-700); font-weight:700; text-decoration:none }
+    .contact a:hover{ text-decoration:underline }
+
+    /* Redes sociales */
+    .social-icons {
+      margin-top: 8px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: #fff;
+      color: var(--green-700);
+      border-radius: 50%;
+      border: 1px solid #e7e7e7;
+      font-size: 20px;
+      transition: background 0.2s, color 0.2s;
+      text-decoration: none;
+    }
+    .social-icons a:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-cita{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 16px;
+      background:var(--green-700);
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:16px;
+      cursor:pointer;
+      transition: background 0.2s;
+    }
+    .btn-cita:hover{ background:var(--green); }
+
+    /* Hero, grid, cards, responsive, call-btn, lang-selector... igual que antes */
+    .hero{
+      background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.35)), url('images/hero.jpg') center/cover no-repeat, var(--green-700);
+      color:#fff;
+    }
+    .hero-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:60px 18px 70px;
+      text-align:center;
+    }
+    .hero h1{ font-size:clamp(28px, 5vw, 44px); margin:0 0 10px }
+    .hero p{ font-size:clamp(16px, 2.4vw, 20px); opacity:.95; margin:0 0 22px }
+    .btn{
+      display:inline-block;
+      padding:12px 18px;
+      border-radius:10px;
+      background:#fff;
+      color:var(--green-700);
+      text-decoration:none;
+      font-weight:700;
+      transition: background 0.3s, color 0.3s;
+    }
+    .btn:hover{ background:var(--green-700); color:#fff; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+    }
+    .card{
+      background:var(--light);
+      border:1px solid #e7e7e7;
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .card h3{ margin:0 0 6px }
+    .card p{ margin:0 }
+    .card img{ width:100%; border-radius:8px; margin-bottom:10px; }
+
+    footer{
+      background:var(--green);
+      color:#fff;
+      text-align:center;
+      padding:18px;
+      margin-top:26px;
+    }
+
+    .lang-selector{ text-align:right; padding:10px 18px; max-width:var(--max); margin:0 auto; }
+    .lang-selector button{ padding:6px 12px; margin-left:6px; cursor:pointer; border-radius:6px; border:none; font-weight:bold; }
+    .lang-selector button[aria-pressed="true"]{ background:var(--green); color:#fff; }
+
+    @media (max-width:640px){
+      nav{ font-size:15px }
+      nav a{ margin-left:12px }
+      .hero-inner{ padding:40px 12px 50px; }
+    }
+
+    .call-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #2c6e49;
+      color: #fff;
+      padding: 14px 18px;
+      border-radius: 50px;
+      text-decoration:none;
+      font-weight:bold;
+      box-shadow:0 4px 8px rgba(0,0,0,0.3);
+      z-index:999;
+    }
+    .call-btn:hover { background: #1f4d33; }
+  </style>
+</head>
+<body>
+  <a href="tel:+17866374643" class="call-btn" aria-label="Llamar ahora">📞 Llamar ahora</a>
+
+  <!-- Selector de idioma -->
+  <div class="lang-selector">
+    <button onclick="setLang('es')" id="btn-es" aria-pressed="true" aria-label="Mostrar español">ES</button>
+    <button onclick="setLang('en')" id="btn-en" aria-pressed="false" aria-label="Show English">EN</button>
+  </div>
+
+  <!-- Español -->
+  <div id="es" class="lang" lang="es">
+    <header>
+      <div class="topbar">
+        <div class="logo">
+          <img src="images/logo.png" alt="Logo de EcoTect Landscape">
+        </div>
+        <nav aria-label="Menú principal">
+          <a href="#servicios-es">Servicios</a>
+          <a href="#contacto-es">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Cuidamos tu jardín como si fuera el nuestro 🌱</h1>
+        <p>Mantenimiento, poda, fumigación, mulch y sprinklers. Puntuales, detallistas y a buen precio.</p>
+        <a class="btn" href="#contacto-es">Pide tu cotización</a>
+      </div>
+    </section>
+
+    <section id="servicios-es" class="section">
+      <h2>Servicios</h2>
+      <p class="lead">Ofrecemos paquetes flexibles: por visita, semanal o mensual.</p>
+      <div class="grid">
+        <div class="card">
+          <img src="images/servicio1.jpg" alt="Mantenimiento de jardines seguro y profesional">
+          <h3>Mantenimiento</h3>
+          <p>Incluye corte regular de césped, limpieza y cuidado general.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio2.jpg" alt="Poda de árboles y arbustos">
+          <h3>Poda</h3>
+          <p>Poda de arbustos, setos y árboles pequeños para mantener el orden y la salud de tu jardín.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio3.jpg" alt="Fumigación de plagas segura para jardines">
+          <h3>Fumigación</h3>
+          <p>Control de plagas y enfermedades en césped, plantas y arbustos con productos seguros.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio4.jpg" alt="Aplicación de mulch y renovación de áreas verdes">
+          <h3>Mulch y Renovación</h3>
+          <p>Aplicación de mulch, renovación de áreas verdes y embellecimiento de espacios.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio5.jpg" alt="Instalación y mantenimiento de sprinklers">
+          <h3>Sprinklers</h3>
+          <p>Instalación y reparación de sistemas de riego automático para tu jardín.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto-es" class="section">
+      <h2>Contacto</h2>
+      <div class="contact">
+        <p>📍 Área: Miami, FL </p>
+        <p>📞 Tel: <a href="tel:+17866374643">(786) 637-4643</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/17866374643?text=Hola,%20quiero%20cotización%20para%20mi%20jardín" target="_blank" rel="noopener">Enviar mensaje</a></p>
+        <p>✉️ Email: <a href="mailto:eliezergardening@gmail.com">eliezergardening@gmail.com</a></p>
+        <p>
+          <span>Síguenos:</span>
+          <span class="social-icons">
+            <a href=https://www.instagram.com/ecotect.landscape?igsh=MWp3eGpxeDhvMnlsbA%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+              <!-- SVG de Instagram -->
+              <svg width="20" height="20" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7 0-39.6 32.1-71.7 71.7-71.7 39.6 0 71.7 32.1 71.7 71.7 0 39.6-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.9C385.4 9.9 354.1 1.7 318.7 0c-35.3-1.7-141.3-1.7-176.6 0C109.5 1.7 78.2 9.9 51.9 36.2 25.6 62.5 17.4 93.9 15.7 129.2c-1.7 35.3-1.7 141.3 0 176.6 1.7 35.3 9.9 66.7 36.2 92.9 26.3 26.3 57.6 34.5 92.9 36.2 35.3 1.7 141.3 1.7 176.6 0 35.3-1.7 66.7-9.9 92.9-36.2 26.3-26.3 34.5-57.6 36.2-92.9 1.7-35.3 1.7-141.3 0-176.6zm-48.2 218c-7.8 19.7-23.1 35-42.8 42.8-29.7 11.8-100.3 9.1-132.5 9.1s-102.8 2.6-132.5-9.1c-19.7-7.8-35-23.1-42.8-42.8-11.8-29.7-9.1-100.3-9.1-132.5s-2.6-102.8 9.1-132.5c7.8-19.7 23.1-35 42.8-42.8 29.7-11.8 100.3-9.1 132.5-9.1s102.8-2.6 132.5 9.1c19.7 7.8 35 23.1 42.8 42.8 11.8 29.7 9.1 100.3 9.1 132.5s2.6 102.8-9.1 132.5z"/>
+              </svg>
+            </a>
+          </span>
+        </p>
+        <a class="btn-cita" href="https://calendly.com/albertodearmas100/30min" target="_blank" rel="noopener">Reserva tu cita</a>
+        <p>🕒 Horario: Lun–Sáb 8am–6pm</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Inglés -->
+  <div id="en" class="lang" lang="en" style="display:none;">
+    <header>
+      <div class="topbar">
+        <div class="logo">
+          <img src="images/logo.png" alt="EcoTect Landscape Logo">
+        </div>
+        <nav aria-label="Main menu">
+          <a href="#servicios-en">Services</a>
+          <a href="#contacto-en">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>We take care of your garden as if it were our own 🌱</h1>
+        <p>Maintenance, pruning, pest control, mulch, and sprinklers. Punctual, detail-oriented, and affordable.</p>
+        <a class="btn" href="#contacto-en">Get a Quote</a>
+      </div>
+    </section>
+
+    <section id="servicios-en" class="section">
+      <h2>Services</h2>
+      <p class="lead">Flexible packages: per visit, weekly, or monthly.</p>
+      <div class="grid">
+        <div class="card">
+          <img src="images/servicio1.jpg" alt="Garden maintenance">
+          <h3>Maintenance</h3>
+          <p>Includes regular lawn mowing, cleaning, and general care.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio2.jpg" alt="Tree and shrub pruning">
+          <h3>Pruning</h3>
+          <p>Pruning shrubs, hedges, and small trees to maintain order and garden health.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio3.jpg" alt="Pest control for gardens">
+          <h3>Pest Control</h3>
+          <p>Safe control of pests and diseases on lawns, plants, and shrubs.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio4.jpg" alt="Mulch and garden renewal">
+          <h3>Mulch & Renewal</h3>
+          <p>Mulch application, garden renewal, and beautification of spaces.</p>
+        </div>
+        <div class="card">
+          <img src="images/servicio5.jpg" alt="Sprinkler installation and maintenance">
+          <h3>Sprinklers</h3>
+          <p>Installation and repair of automatic irrigation systems for your garden.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto-en" class="section">
+      <h2>Contact</h2>
+      <div class="contact">
+        <p>📍 Area: Miami, FL </p>
+        <p>📞 Tel: <a href="tel:+17866374643">(786) 637-4643</a></p>
+        <p>💬 WhatsApp: <a href="https://wa.me/17866374643?text=Hello,%20I%20want%20a%20quote%20for%20my%20garden" target="_blank" rel="noopener">Send message</a></p>
+        <p>✉️ Email: <a href="mailto:eliezergardening@gmail.com">eliezergardening@gmail.com</a></p>
+        <p>
+          <span>Follow us:</span>
+          <span class="social-icons">
+            <a href="https://instagram.com/tuusuario" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+                <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9S160.5 370.8 224.1 370.8 339 319.5 339 255.9 287.7 141 224.1 141zm0 186.6c-39.6 0-71.7-32.1-71.7-71.7 0-39.6 32.1-71.7 71.7-71.7 39.6 0 71.7 32.1 71.7 71.7 0 39.6-32.1 71.7-71.7 71.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-35.3-9.9-66.7-36.2-92.9C385.4 9.9 354.1 1.7 318.7 0c-35.3-1.7-141.3-1.7-176.6 0C109.5 1.7 78.2 9.9 51.9 36.2 25.6 62.5 17.4 93.9 15.7 129.2c-1.7 35.3-1.7 141.3 0 176.6 1.7 35.3 9.9 66.7 36.2 92.9 26.3 26.3 57.6 34.5 92.9 36.2 35.3 1.7 141.3 1.7 176.6 0 35.3-1.7 66.7-9.9 92.9-36.2 26.3-26.3 34.5-57.6 36.2-92.9 1.7-35.3 1.7-141.3 0-176.6zm-48.2 218c-7.8 19.7-23.1 35-42.8 42.8-29.7 11.8-100.3 9.1-132.5 9.1s-102.8 2.6-132.5-9.1c-19.7-7.8-35-23.1-42.8-42.8-11.8-29.7-9.1-100.3-9.1-132.5s-2.6-102.8 9.1-132.5c7.8-19.7 23.1-35 42.8-42.8 29.7-11.8 100.3-9.1 132.5-9.1s102.8-2.6 132.5 9.1c19.7 7.8 35 23.1 42.8 42.8 11.8 29.7 9.1 100.3 9.1 132.5s2.6 102.8-9.1 132.5z"/>
+              </svg>
+            </a>
+          </span>
+        </p>
+        <a class="btn-cita" href="https://calendly.com/tuusuario/jardin" target="_blank" rel="noopener">Book your appointment</a>
+        <p>🕒 Hours: Mon–Sat 8am–6pm</p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <small>&copy; 2025 EcoTect Landscape. All rights reserved.</small>
+  </footer>
+
+  <!-- Tawk.to Chat -->
+  <div id="tawkto-container" style="z-index:10000;"></div>
+  <script type="text/javascript">
+    // Tawk.to chat
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/68ac4e23a3ffa419223bd585/1j3gh2et9';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // Selector de idioma con resaltado de botón activo y aria-pressed
+    function setLang(lang){
+      document.querySelectorAll('.lang').forEach(el => el.style.display = 'none');
+      document.getElementById(lang).style.display = 'block';
+      document.getElementById('btn-es').setAttribute('aria-pressed', lang==='es');
+      document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en');
+    }
+  </script>
+</body>
+</html>
